@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<h1>マイページ</h1>
+	<table>
+		<form method="post" action="/mypage/" th:object="${userData}">
+			<input type="hidden" name="id" th:value="*{id}">
+			<tr>
+				<td><label>名前</label></td>
+				<td><input type="text" name="name" th:value="*{name}"></td>
+			</tr>
+			<tr>
+				<td><label>メールアドレス</label></td>
+				<td><input type="text" name="mail" th:value="*{mail}"></td>
+			</tr>
+			<tr>
+				<td><label>パスワード</label></td>
+				<td><input type="password" name="pass" th:value="*{pass}"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="更新"></td>
+			</tr>
+		</form>
+	</table>
+</body>
+</html>

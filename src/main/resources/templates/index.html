@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" charset="utf-8">
+<title>index</title>
+</head>
+<body>
+	<h1>サイト名</h1>
+	<div class="profile">
+
+		<h1>プロフィール</h1>
+		<h2 th:text="${name}">佐藤 HTML太郎</h2>
+		<h2 th:text="${age}">35歳</h2>
+		<h2 th:text="${height}">207cm</h2>
+
+	</div>
+	<form action="/" method="POST">
+		<label>名前</label><input type="text" name="nameVal">
+		<label><br>年齢</label><input type="text" name="ageVal">
+		<label><br>身長</label><input type="text" name="heightVal">
+		<input type="submit", value="送信">
+	</form>
+</body>
+</html>

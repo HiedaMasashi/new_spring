@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ユーザーデータ</title>
+</head>
+<body>
+	<form method="post" action="/userData" th:object="${formModel}">
+		<h1>新規ユーザー登録</h1>
+		<labeL>名前</labeL><input type="text" name="name">
+		<labeL>メール</labeL><input type="text" name="mail">
+		<labeL>パスワード</labeL><input type="pass" name="pass">
+		<input type="submit" value="登録">
+	</form>
+	<h1>顧客リスト</h1>
+	<table>
+		<tr>
+			<th>登録者番号</th>
+			<th>名前</th>
+			<th>メールアドレス</th>
+			<th>パスワード</th>
+		</tr>
+		<tr th:each="c : ${customers}">
+			<td th:text="${c.id}"></td>
+			<td th:text="${c.name}"></td>
+			<td th:text="${c.mail}"></td>
+			<td>見せられないよ</td>
+			<td><form method="post" action="/delete/">
+			<input type="hidden" name="id" th:value="${c.id}">
+			<input type="submit" value="削除"></form></td>
+		</tr>
+	</table>
+</body>
+</html>
